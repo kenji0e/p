@@ -9,11 +9,11 @@ export default {
       keyframes: { // Tambahkan blok keyframes ini
         bounce: {
           '0%, 100%': { transform: 'translateY(0)' },
-          '50%': { transform: 'translateY(-10px)' }, // Naik 10px
+          '50%': { transform: 'translateY(-10px)' }, 
         }
       },
-      animation: { // Tambahkan blok animation ini
-        bounce: 'bounce 1s infinite', // Animasi bounce dengan durasi 1 detik, berulang tak terbatas
+      animation: { 
+        bounce: 'bounce 1s infinite', 
       }
     },
   },
