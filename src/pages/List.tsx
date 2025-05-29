@@ -1,9 +1,10 @@
 // src/pages/List.tsx
-import React from 'react';
+import React from "react"; // Pastikan ini ada
 
-const List = () => {
+const List: React.FC = () => { // Tambahkan : React.FC untuk type safety
   return (
     <div className="container mx-auto p-6 md:p-10 min-h-[calc(100vh-180px)] flex items-center justify-center">
+      {/* Konten utama dibungkus dalam div ini agar terpusat */}
       <div className="max-w-2xl mx-auto p-6 font-sans bg-white rounded-lg shadow-md w-full">
         <h1 className="text-3xl font-bold text-center mb-8 text-blue-800 bg-green-100 py-2 rounded-md shadow-sm">
           DAFTAR BIAYA
@@ -26,14 +27,7 @@ const List = () => {
             <li>Transportasi Rihlah, Ziarah, Kajian diluar pondok dll 3x setiap tahunnya</li>
             <li>Tidak Ada Uang Pangkal Setiap Tahannya</li>
           </ul>
-
-          {/* Bagian ini Dihapus */}
-          {/*
-          <div className="border-t border-gray-300 pt-4">
-            <p className="text-lg font-semibold text-center text-gray-800">0312-1196-1829</p>
-            <p className="text-lg font-semibold text-center text-gray-800">Ustadzah Anissa</p>
-          </div>
-          */}
+          {/* Bagian kontak Ustadzah Anissa dan Ustd. Sanusi sudah dihapus */}
         </div>
 
         {/* SPP Section */}
@@ -47,14 +41,7 @@ const List = () => {
             <li>Ekskul Hadroh</li>
             <li>Transportasi Sekolah</li>
           </ul>
-
-          {/* Bagian ini Dihapus */}
-          {/*
-          <div className="border-t border-gray-300 pt-4">
-            <p className="text-lg font-semibold text-center text-gray-800">0812-9286-0426</p>
-            <p className="text-lg font-semibold text-center text-gray-800">Ustd. Sanusi</p>
-          </div>
-          */}
+          {/* Bagian kontak Ustadzah Anissa dan Ustd. Sanusi sudah dihapus */}
         </div>
 
         {/* NB Section */}
