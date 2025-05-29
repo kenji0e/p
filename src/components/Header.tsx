@@ -1,18 +1,23 @@
 // src/components/Header.tsx
 import React, { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom'; // Import useLocation
+import { Link, useLocation } from 'react-router-dom';
 import AppLogo from '../assets/logo.png';
 
-interface HeaderProps {
-  appName?: string; // Opsional jika nama statis
-}
+const Header: React.FC = () => {
+  const [isOpen, setIsOpen] = useState(false); // For mobile hamburger menu
+  const [isRagamOpen, setIsRagamOpen] = useState(false); // For Ragam submenu dropdown
+  const location = useLocation();
 
-const Header: React.FC<HeaderProps> = () => { // Hapus { appName }
-  const [isOpen, setIsOpen] = useState(false);
-  const location = useLocation(); // Hook untuk mendapatkan lokasi saat ini
+  const toggleRagamDropdown = () => {
+    setIsRagamOpen(!isRagamOpen);
+  };
+
+  const closeMobileMenu = () => {
+    setIsOpen(false);
+    setIsRagamOpen(false); // Also close Ragam dropdown when mobile menu closes
+  };
 
   return (
-    // Background putih, text hitam, border bawah tipis abu-abu
     <header className="bg-white text-gray-800 p-4 shadow-md sticky top-0 z-50 border-b border-gray-200">
       <div className="container mx-auto flex justify-between items-center">
         {/* Logo dan Nama Aplikasi */}
@@ -45,33 +50,54 @@ const Header: React.FC<HeaderProps> = () => { // Hapus { appName }
         <nav className="hidden md:block">
           <ul className="flex space-x-6">
             <li>
-              <Link 
-                to="/tentang" 
-                // Jika path cocok, tambahkan class text-green-600, jika tidak text-gray-800
+              <Link
+                to="/tentang"
                 className={`hover:text-green-600 transition-colors duration-200 ${location.pathname === '/tentang' ? 'text-green-600 font-semibold' : 'text-gray-800'}`}
               >
                 Tentang
               </Link>
             </li>
-            <li>
-              <Link 
-                to="/ragam" 
-                className={`hover:text-green-600 transition-colors duration-200 ${location.pathname === '/ragam' ? 'text-green-600 font-semibold' : 'text-gray-800'}`}
+            <li className="relative"> {/* Added relative for dropdown positioning */}
+              <button
+                onClick={toggleRagamDropdown}
+                className={`flex items-center hover:text-green-600 transition-colors duration-200 focus:outline-none ${location.pathname.startsWith('/ragam') ? 'text-green-600 font-semibold' : 'text-gray-800'}`}
               >
                 Ragam
-              </Link>
+                <svg
+                  className={`w-4 h-4 ml-1 transform ${isRagamOpen ? 'rotate-180' : 'rotate-0'} transition-transform duration-200`}
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </button>
+              {isRagamOpen && (
+                <div className="absolute left-0 mt-2 w-48 bg-white border border-gray-200 rounded-md shadow-lg z-10">
+                  <Link to="/ragam/fasilitas" onClick={() => setIsRagamOpen(false)} className="block px-4 py-2 text-gray-800 hover:bg-gray-100 hover:text-green-600">
+                    Fasilitas
+                  </Link>
+                  <Link to="/ragam/santri" onClick={() => setIsRagamOpen(false)} className="block px-4 py-2 text-gray-800 hover:bg-gray-100 hover:text-green-600">
+                    Santri
+                  </Link>
+                  <Link to="/ragam/program" onClick={() => setIsRagamOpen(false)} className="block px-4 py-2 text-gray-800 hover:bg-gray-100 hover:text-green-600">
+                    Program
+                  </Link>
+                </div>
+              )}
             </li>
             <li>
-              <Link 
-                to="/daftar" 
+              <Link
+                to="/daftar"
                 className={`hover:text-green-600 transition-colors duration-200 ${location.pathname === '/daftar' ? 'text-green-600 font-semibold' : 'text-gray-800'}`}
               >
                 Daftar
               </Link>
             </li>
             <li>
-              <Link 
-                to="/kontak" 
+              <Link
+                to="/kontak"
                 className={`hover:text-green-600 transition-colors duration-200 ${location.pathname === '/kontak' ? 'text-green-600 font-semibold' : 'text-gray-800'}`}
               >
                 Kontak
@@ -83,39 +109,60 @@ const Header: React.FC<HeaderProps> = () => { // Hapus { appName }
 
       {/* Mobile Menu */}
       {isOpen && (
-        <nav className="md:hidden mt-4 bg-gray-50 p-4 rounded-b-lg border-t border-gray-200"> {/* Bg sedikit abu-abu untuk kontras */}
+        <nav className="md:hidden mt-4 bg-gray-50 p-4 rounded-b-lg border-t border-gray-200">
           <ul className="flex flex-col space-y-4">
             <li>
-              <Link 
-                onClick={() => setIsOpen(false)} 
-                to="/tentang" 
+              <Link
+                onClick={closeMobileMenu}
+                to="/tentang"
                 className={`block hover:text-green-600 transition-colors duration-200 ${location.pathname === '/tentang' ? 'text-green-600 font-semibold' : 'text-gray-800'}`}
               >
                 Tentang
               </Link>
             </li>
             <li>
-              <Link 
-                onClick={() => setIsOpen(false)} 
-                to="/ragam" 
-                className={`block hover:text-green-600 transition-colors duration-200 ${location.pathname === '/ragam' ? 'text-green-600 font-semibold' : 'text-gray-800'}`}
+              <button
+                onClick={toggleRagamDropdown}
+                className={`flex items-center justify-between w-full text-left hover:text-green-600 transition-colors duration-200 focus:outline-none ${location.pathname.startsWith('/ragam') ? 'text-green-600 font-semibold' : 'text-gray-800'}`}
               >
                 Ragam
-              </Link>
+                <svg
+                  className={`w-4 h-4 ml-1 transform ${isRagamOpen ? 'rotate-180' : 'rotate-0'} transition-transform duration-200`}
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </button>
+              {isRagamOpen && (
+                <div className="ml-4 mt-2 border-l border-gray-300 pl-4 space-y-2"> {/* Indent submenu */}
+                  <Link to="/ragam/fasilitas" onClick={closeMobileMenu} className="block text-gray-700 hover:text-green-600">
+                    Fasilitas
+                  </Link>
+                  <Link to="/ragam/santri" onClick={closeMobileMenu} className="block text-gray-700 hover:text-green-600">
+                    Santri
+                  </Link>
+                  <Link to="/ragam/program" onClick={closeMobileMenu} className="block text-gray-700 hover:text-green-600">
+                    Program
+                  </Link>
+                </div>
+              )}
             </li>
             <li>
-              <Link 
-                onClick={() => setIsOpen(false)} 
-                to="/daftar" 
+              <Link
+                onClick={closeMobileMenu}
+                to="/daftar"
                 className={`block hover:text-green-600 transition-colors duration-200 ${location.pathname === '/daftar' ? 'text-green-600 font-semibold' : 'text-gray-800'}`}
               >
                 Daftar
               </Link>
             </li>
             <li>
-              <Link 
-                onClick={() => setIsOpen(false)} 
-                to="/kontak" 
+              <Link
+                onClick={closeMobileMenu}
+                to="/kontak"
                 className={`block hover:text-green-600 transition-colors duration-200 ${location.pathname === '/kontak' ? 'text-green-600 font-semibold' : 'text-gray-800'}`}
               >
                 Kontak
