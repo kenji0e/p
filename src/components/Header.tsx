@@ -49,6 +49,17 @@ const Header: React.FC = () => {
         {/* Navigation Links (Desktop) */}
         <nav className="hidden md:block">
           <ul className="flex space-x-6">
+            {/* >>>>> Tambahkan menu Beranda di sini <<<<< */}
+            <li>
+              <Link
+                to="/" // Link ke root path (Home.tsx)
+                className={`hover:text-green-600 transition-colors duration-200 ${location.pathname === '/' ? 'text-green-600 font-semibold' : 'text-gray-800'}`}
+              >
+                Beranda
+              </Link>
+            </li>
+            {/* >>>>> Akhir penambahan menu Beranda <<<<< */}
+
             <li>
               <Link
                 to="/tentang"
@@ -111,6 +122,18 @@ const Header: React.FC = () => {
       {isOpen && (
         <nav className="md:hidden mt-4 bg-gray-50 p-4 rounded-b-lg border-t border-gray-200">
           <ul className="flex flex-col space-y-4">
+            {/* >>>>> Tambahkan menu Beranda di mobile <<<<< */}
+            <li>
+              <Link
+                onClick={closeMobileMenu}
+                to="/" // Link ke root path (Home.tsx)
+                className={`block hover:text-green-600 transition-colors duration-200 ${location.pathname === '/' ? 'text-green-600 font-semibold' : 'text-gray-800'}`}
+              >
+                Beranda
+              </Link>
+            </li>
+            {/* >>>>> Akhir penambahan menu Beranda mobile <<<<< */}
+
             <li>
               <Link
                 onClick={closeMobileMenu}
