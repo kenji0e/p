@@ -13,7 +13,7 @@ const List: React.FC = () => { // Tambahkan : React.FC untuk type safety
         {/* Uang Pangkal Section */}
         <div className="mb-10 p-6 bg-blue-50 rounded-lg transform transition-all duration-300 hover:scale-103 hover:shadow-lg hover:border-blue-300 border border-blue-50">
           <h2 className="text-2xl font-semibold mb-4 text-blue-700">UANG PANGKAL</h2>
-          <p className="text-xl font-bold mb-4 text-red-600">Rp. 10.000.000</p>
+          <p className="text-xl font-bold mb-4 text-red-600">Rp. xxxx</p>
           <p className="font-medium mb-4">Sudah Termasuk</p>
           <ul className="list-disc pl-6 space-y-2 mb-6 text-gray-700">
             <li>Seragam 3 Style</li>
@@ -33,7 +33,7 @@ const List: React.FC = () => { // Tambahkan : React.FC untuk type safety
         {/* SPP Section */}
         <div className="mb-10 p-6 bg-green-50 rounded-lg transform transition-all duration-300 hover:scale-103 hover:shadow-lg hover:border-green-300 border border-green-50">
           <h2 className="text-2xl font-semibold mb-4 text-green-700">SPP</h2>
-          <p className="text-xl font-bold mb-4 text-red-600">Rp. 1.500.000</p>
+          <p className="text-xl font-bold mb-4 text-red-600">Rp. xxx</p>
           <p className="font-medium mb-4">Sudah Termasuk</p>
           <ul className="list-disc pl-6 space-y-2 mb-6 text-gray-700">
             <li>Makan 3 Kali Sehari</li>
