@@ -1,6 +1,6 @@
 // src/components/WhatsAppButton.tsx
 import React from 'react';
-import WhatsAppIcon from '../assets/whatsapp.svg'; // <--- PASTIKAN PATH INI BENAR
+import { FaWhatsapp } from 'react-icons/fa'; 
 
 interface WhatsAppButtonProps {
   phoneNumber: string;
@@ -15,10 +15,11 @@ const WhatsAppButton: React.FC<WhatsAppButtonProps> = ({ phoneNumber, message = 
       href={whatsappLink}
       target="_blank"
       rel="noopener noreferrer"
-      className="fixed bottom-6 right-6 bg-green-500 text-white p-3 rounded-full shadow-lg hover:bg-green-600 transition-colors duration-300 z-50"
+      // Tambahkan kelas 'animate-bounce' di sini
+      className="fixed bottom-6 right-6 bg-green-500 text-white p-3 rounded-full shadow-lg hover:bg-green-600 transition-colors duration-300 z-50 flex items-center justify-center animate-bounce" 
       aria-label="Chat on WhatsApp"
     >
-      <img src={WhatsAppIcon} alt="WhatsApp" className="h-8 w-8" />
+      <FaWhatsapp className="h-8 w-8 text-white" /> 
     </a>
   );
 };

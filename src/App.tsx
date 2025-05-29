@@ -8,13 +8,13 @@ import About from './pages/About';
 import Variety from './pages/Variety';
 import List from './pages/List';
 import Contact from './pages/Contact';
-import Home from './pages/Home'; // Import halaman Home
+import Home from './pages/Home';
 
 const App: React.FC = () => {
   return (
     <Router>
       <div className="flex flex-col min-h-screen">
-        <Header appName="Aplikasi Keren" /> {/* Ganti dengan nama aplikasi Anda */}
+        <Header />
         <main className="flex-grow">
           <Routes>
             <Route path="/" element={<Home />} />
@@ -22,12 +22,10 @@ const App: React.FC = () => {
             <Route path="/ragam" element={<Variety />} />
             <Route path="/daftar" element={<List />} />
             <Route path="/kontak" element={<Contact />} />
-            {/* Tambahkan rute untuk halaman 404 jika diperlukan */}
-            {/* <Route path="*" element={<NotFound />} /> */}
           </Routes>
         </main>
         <Footer />
-        <WhatsAppButton phoneNumber="6281234567890" message="Halo, saya ingin bertanya tentang aplikasi Anda." /> {/* Ganti dengan nomor WhatsApp Anda */}
+        <WhatsAppButton phoneNumber="6281211961829" message="Halo, saya ingin bertanya tentang Baitul Qur'an Ar-Rahim." />
       </div>
     </Router>
   );
