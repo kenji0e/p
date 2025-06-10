@@ -7,6 +7,12 @@ import Santri3 from '../assets/3.jpg';
 import Santri4 from '../assets/4.jpg';
 import Santri5 from '../assets/5.jpg';
 import Santri6 from '../assets/6.jpg';
+import Santri7 from '../assets/7.jpg';
+import Santri8 from '../assets/8.jpg';
+import Santri9 from '../assets/9.jpg';
+import Santri10 from '../assets/10.jpg';
+import Santri11 from '../assets/11.jpg';
+import Santri12 from '../assets/12.jpg';
 
 const Santri: React.FC = () => {
   // Array of santri objects based on the provided images
@@ -72,6 +78,68 @@ const Santri: React.FC = () => {
       ustadz: "Ustadz Amar",
     },
     // Tambahkan lebih banyak data santri di sini jika ada
+
+    {
+      image: Santri7,
+      name: "Afwani Khoirunnisa Binti Bpk. Setya Gunawan",
+      origin: "Bogor",
+      book: "Tuhfatul Athfal",
+      date: "Ahad, 01 Juni 2025",
+      hijriDate: "05 Dzulhijjah 1446 H",
+      status: "جيد جداً",
+      ustadz: "Ustadz Muzakkir",
+    },
+    {
+      image: Santri8,
+      name: "Zuwaidah Hayya Nawabillah Binti Bpk. Kurniawan",
+      origin: "Jakarta",
+      book: "'Aqidatul 'Awam",
+      date: "Kamis, 29 Mei 2025",
+      hijriDate: "02 Dzulhijjah 1446 H",
+      status: "جيد جداً",
+      ustadz: "Ustadz Amar",
+    },
+    {
+      image: Santri9,
+      name: "Octavia In'am Binti Bpk. Irwansyah",
+      origin: "Bogor",
+      book: "'Aqidatul 'Awam",
+      date: "Kamis, 29 Mei 2025",
+      hijriDate: "02 Dzulhijjah 1446 H",
+      status: "جيد جداً",
+      ustadz: "Ustadz Amar",
+    },
+    {
+      image: Santri10,
+      name: "Kaysa Haura Zada Binti Bpk. Shobirin",
+      origin: "Jambi",
+      book: "Tuhfatul Athfal",
+      date: "Kamis, 05 Juni 2025",
+      hijriDate: "09 Dzulhijjah 1446 H",
+      status: "جيد جداً",
+      ustadz: "Ustadz Amar",
+    },
+    {
+      image: Santri11,
+      name: "Rafeyfa Asyla Binti Bpk. Mochamad Ridwan",
+      origin: "Jakarta",
+      book: "Tuhfatul Athfal",
+      date: "Rabu, 28 Mei 2025",
+      hijriDate: "01 Dzulhijjah 1446 H",
+      status: "جيد جداً",
+      ustadz: "Ustadz Muzakkir",
+    },
+    {
+      image: Santri12,
+      name: "Salma Binti Bpk. Yusnan",
+      origin: "Tangerang",
+      book: "Tuhfatul Athfal",
+      date: "Kamis, 05 Juni 2025",
+      hijriDate: "09 Dzulhijjah 1446 H",
+      status: "جيد جداً",
+      ustadz: "Ustadz Muzakkir",
+    },
+    // >>>>> Akhir penambahan data santri baru <<<<<
   ];
 
   return (
