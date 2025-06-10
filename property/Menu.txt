@@ -1,0 +1,16 @@
+Menu
+ -- Pesantren
+	-- Visi & Misi
+ 	-- Fasilitas
+ 	-- Program Pendidikan
+	-- Extrakurikuler
+ -- Ragam
+	-- Berita
+	-- Santri
+ 	-- Kegiatan
+ -- Pendaftaran
+	-- Waktu Pendaftaran
+	-- Persyaratan
+  	-- Biaya Pendidikan
+ -- Kontak
+	
