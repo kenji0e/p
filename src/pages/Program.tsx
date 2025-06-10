@@ -16,8 +16,8 @@ const programVideos = [
   },
   {
     id: 2,
-    title: "Ekskul Pilihan: Berkuda & Panahan",
-    description: "Lihat keseruan santri dalam kegiatan ekstrakurikuler yang mengembangkan fisik dan mental, seperti berkuda dan panahan.",
+    title: "Keseruan santri Banat, Libur Hari Raya Idul Adha",
+    description: "Lihat keseruan santri dalam kegiatan Liburan, Alhamdulillah mendapat kesempatan untuk bermain di pasar malam yang didampingi oleh ustadz/ustadzah.",
     videoSrc: video2,
   },
   {
